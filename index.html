@@ -14,7 +14,7 @@
   {% for pin in pins %}
   <h2>{{pins[pin].name}}
   {% if pins[pin].state == true %}
-    ia is currently <strong>on</strong>
+    is currently <strong>on</strong>
 </h2><div class="row"><div class="col-md-2">
       <a href="/{{pin}}/off" class="btn btn-block btn-lg btn-default" role="button">Turn off</a></div></div>
   {% else %}

@@ -17,11 +17,11 @@ for pin in pins:
 def main():
   for pin in pins:
     pins[pin]['state'] = GPIO.input(pin)
-  
+
   templateData = {
     'pins' : pins
-  } 
-  return render_template('main.html', **templateData)
+    }
+  return render_template('index.html', **templateData)
 
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
@@ -36,11 +36,11 @@ def action(changePin, action):
 
   for pin in pins:
     pins[pin]['state'] = GPIO.input(pin)
-  
+
     templateData = {
       'pins' : pins
     }
-  return render_template('main.html', **templateData)
+  return render_template('index.html', **templateData)
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=80, debug=True)
+  app.run(host='0.0.0.0', debug=True)
